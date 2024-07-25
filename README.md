@@ -31,4 +31,5 @@ Suitable Punishment Found: Execution by Gas Chamber, Possible Vindication
 ### Latest Update(s):
 ---
 
-- Removed the chalk dependency & added a custom ANSI escape code (`\x1b[1;32m`; bold + green)
+- (1.1) Removed the chalk dependency & added a custom ANSI escape code (`\x1b[1;32m`; bold + green)
+- (2.1) Changed the JSON format entirely had ChatGPT make a special formatting for the things
