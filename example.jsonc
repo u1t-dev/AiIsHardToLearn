@@ -1,0 +1,15 @@
+/*
+okay so in the nested objects for adult/juvenile the 1/1_Fine is the punishment for that offense level (first offense, second, third, etc., goes up to 5 but you can make it higher)
+*/
+{
+  "crimeName": { // name for the crime
+    "adult": { // punishments for adults
+      "1": "{number}-{timeDescriptor}_{location}", // ex: "1-year_Prison"
+      "1_Fine": "${number}" // ex: "$100"
+    },
+    "juvenile": { // punishments for children; exact same as adult, just specifically for juvenile delinquents
+      "1": "{number}-{timeDescriptor}_{location}",
+      "1_Fine": "${number}"
+    }
+  }
+}
