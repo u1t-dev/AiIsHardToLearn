@@ -12,3 +12,18 @@ well, basically, it just takes an input crime + details (offense #, if they're a
 
 ## What packages does this use?
 it uses chalk & natural, so just run `npm i chalk natural` to get the dependant packages (i also have prettier installed as well, just for the organization and stuff)
+
+
+Example Input:
+
+```ansi
+\033[33m$\033[0m node .
+
+Enter the crime: Kidnapping
+
+Enter the details of the crime: First offense
+
+---
+
+\033[32mSuitable Punishment Found: Execution by Gas Chamber, Possible Vindication\033[0m
+```
