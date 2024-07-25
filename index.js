@@ -14,15 +14,12 @@ const loadData = async (filePath) => {
 
 const computeSimilarity = (input, data) => {
   const crimeWeight = 0.7;
-  const detailsWeight = 0.3;
 
-  return data.map((entry) => {
-    const crimeSimilarity = JaroWinklerDistance(input.crime, entry.crime);
-    const detailsSimilarity = JaroWinklerDistance(input.details, entry.details);
+  return Object.keys(data).map((crimeName) => {
+    const crimeSimilarity = JaroWinklerDistance(input.crime, crimeName);
 
-    const totalSimilarity =
-      crimeSimilarity * crimeWeight + detailsSimilarity * detailsWeight;
-    return { ...entry, similarity: totalSimilarity };
+    const totalSimilarity = crimeSimilarity * crimeWeight;
+    return { crimeName, similarity: totalSimilarity };
   });
 };
 
@@ -30,6 +27,19 @@ const findMostSimilarCase = (similarities) => {
   return similarities.reduce((prev, curr) =>
     curr.similarity > prev.similarity ? curr : prev,
   );
+};
+
+const formatPunishment = (punishments, offenseLevel) => {
+  return Object.keys(punishments)
+    .filter((key) => key.startsWith(offenseLevel))
+    .map((key) => {
+      const value = punishments[key];
+      if (key.includes("Fine")) {
+        return value.replace('_', ' ');
+      }
+      const [time, location] = value.split("_");
+      return `${time} in ${location}`;
+    });
 };
 
 (async () => {
@@ -45,9 +55,28 @@ const findMostSimilarCase = (similarities) => {
       const inputCase = { crime, details };
       const similarities = computeSimilarity(inputCase, data);
       const mostSimilarCase = findMostSimilarCase(similarities);
-      console.log(
-        `---\n\x1b[1;32mSuitable Punishment Found: ${mostSimilarCase.punishment}\x1b[22;0m`,
-      );
+      const isJuvenile = /(juvenile)/gi.test(details);
+      const offenseMatch = details.match(/(first|second|third|fourth|fifth)/gi);
+      const offenseLevel = offenseMatch ? offenseMatch[0].toLowerCase() : 'first';
+      const offenseLevelMap = {
+        'first': '1',
+        'second': '2',
+        'third': '3',
+        'fourth': '4',
+        'fifth': '5'
+      };
+      const offenseLevelNumber = offenseLevelMap[offenseLevel];
+      const punishments = isJuvenile
+        ? data[mostSimilarCase.crimeName].juvenile
+        : data[mostSimilarCase.crimeName].adult;
+      const formattedPunishments = formatPunishment(punishments, offenseLevelNumber);
+
+      if (formattedPunishments.length > 0) {
+        console.log(`---\n\x1b[1;32mSuitable Punishment Found:\x1b[22;0m`);
+        formattedPunishments.forEach((p) => console.log(`\x1b[32m${p}`));
+      } else {
+        console.log("---\n\x1b[1;101mNo suitable punishment found.\x1b[0m");
+      }
       rl.close();
     });
   });
