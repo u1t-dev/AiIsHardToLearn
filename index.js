@@ -1,7 +1,6 @@
 import { readFile } from "node:fs/promises";
 import readline from "node:readline";
 import pkg from "natural";
-import chalk from "chalk";
 const { JaroWinklerDistance } = pkg;
 
 const loadData = async (filePath) => {
@@ -19,7 +18,7 @@ const computeSimilarity = (input, data) => {
 
   return data.map((entry) => {
     const crimeSimilarity = JaroWinklerDistance(input.crime, entry.crime);
-    let detailsSimilarity = JaroWinklerDistance(input.details, entry.details);
+    const detailsSimilarity = JaroWinklerDistance(input.details, entry.details);
 
     const totalSimilarity =
       crimeSimilarity * crimeWeight + detailsSimilarity * detailsWeight;
@@ -34,7 +33,7 @@ const findMostSimilarCase = (similarities) => {
 };
 
 (async () => {
-  const data = await loadData("./data.json");
+  const data = await loadData("./data.jsonc");
 
   const rl = readline.createInterface({
     input: process.stdin,
@@ -47,7 +46,7 @@ const findMostSimilarCase = (similarities) => {
       const similarities = computeSimilarity(inputCase, data);
       const mostSimilarCase = findMostSimilarCase(similarities);
       console.log(
-        `---\n${chalk.greenBright(`Suitable Punishment Found: ${mostSimilarCase.punishment}`)}`,
+        `---\n\x1b[1;32mSuitable Punishment Found: ${mostSimilarCase.punishment}`,
       );
       rl.close();
     });
