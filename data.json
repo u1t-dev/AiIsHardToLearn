@@ -1,137 +1,18 @@
-[
-  {
-    "crime": "Littering",
-    "punishment": "100 lashes",
-    "details": "First offense"
-  },
-  {
-    "crime": "Treason",
-    "punishment": "50-years Prison, Medium Security",
-    "details": "Accused by Provincial Governor"
-  },
-  {
-    "crime": "Treason",
-    "punishment": "Life-sentence Prison, Maximum Security, no Parole",
-    "details": "Accused by Intercontinental Royalty"
-  },
-  {
-    "crime": "Robbery",
-    "punishment": "1-year Probation",
-    "details": "First offense, juvenile, showed remorse"
-  },
-  {
-    "crime": "Cyber-Bullying",
-    "punishment": "2-years Probation",
-    "details": "First offense, juvenile"
-  },
-  {
-    "crime": "Armed Robbery",
-    "punishment": "1-year Juvenile Detention, Medium Security",
-    "details": "Second offense, juvenile"
-  },
-  {
-    "crime": "Armed Robbery",
-    "punishment": "5-years Prison, Medium Security",
-    "details": "First offense"
-  },
-  {
-    "crime": "Robbery",
-    "punishment": "2-years Prison",
-    "details": "First offense"
-  },
-  {
-    "crime": "Murder",
-    "punishment": "Life-sentence Prison, Maximum Security, (Parole: min 30y)",
-    "details": "First offense"
-  },
-  {
-    "crime": "Murder",
-    "punishment": "Life-sentence Prison, Maximum Security, (Parole: min 25y)",
-    "details": "First offense, juvenile"
-  },
-  {
-    "crime": "Trespassing",
-    "punishment": "6-months Probation + 1-year Jail",
-    "details": "First offense, plead guilty"
-  },
-  {
-    "crime": "Littering",
-    "punishment": "100 lashes",
-    "details": "First offense, juvenile"
-  },
-  {
-    "crime": "Assault",
-    "punishment": "2-years Probation + 1-year Juvenile Detention, Medium Security",
-    "details": "Second offense, juvenile"
-  },
-  {
-    "crime": "Public Intoxication",
-    "punishment": "6-months Rehab, 1-year Probation",
-    "details": "Second offense"
-  },
-  {
-    "crime": "Disorderly Conduct",
-    "punishment": "$500 Restitution Fine",
-    "details": "First offense"
-  },
-  {
-    "crime": "Quintuple Murder",
-    "punishment": "Execution by Lethal Injection, no Vindication",
-    "details": "First offense, juvenile"
-  },
-  {
-    "crime": "Inciting a Riot",
-    "punishment": "3-years Prison, Medium Security",
-    "details": "Second offense, plead guilty"
-  },
-  {
-    "crime": "Bank Robbery",
-    "punishment": "10-years Prison, Medium Security + $90,000 Restitution Fine",
-    "details": "Second offense, plead guilty"
-  },
-  {
-    "crime": "Assault with a Deadly Weapon",
-    "punishment": "6-years Prison, High Security",
-    "details": "First offense, plead guilty"
-  },
-  {
-    "crime": "Racketeering",
-    "punishment": "14-years Prison, High Security + $50,000 Restitution Fine",
-    "details": "Third offense"
-  },
-  {
-    "crime": "Domestic Abuse",
-    "punishment": "10-years Prison, High Security + $75,000 Restitution Fine",
-    "details": "Second offense, plead guilty"
-  },
-  {
-    "crime": "Sexual Assault",
-    "punishment": "Execution by Rats, no Vindication",
-    "details": "First offense"
-  },
-  {
-    "crime": "Sexual Harassment",
-    "punishment": "Registry + 10-years Prison, High Security",
-    "details": "First offense"
-  },
-  {
-    "crime": "Accessory to Murder",
-    "punishment": "3-years Probation + $500 Restitution Fine",
-    "details": "First offense"
-  },
-  {
-    "crime": "Probable Cause",
-    "punishment": "1-week Holding (will be removed from record if not guilty)",
-    "details": "First offense"
-  },
-  {
-    "crime": "Jaywalking",
-    "punishment": "Nothing",
-    "details": ""
-  },
-  {
-    "crime": "Kidnapping",
-    "punishment": "Execution by Gas Chamber, Possible Vindication",
-    "details": "Second offense, plead guilty"
+{
+  "Loitering": {
+    "adult": {
+      "1_Fine": "$100",
+      "2_Fine": "$150",
+      "3_Fine": "$250",
+      "4_Fine": "$350",
+      "5": "1-month_Jail"
+    },
+    "juvenile": {
+      "1_Fine": "$25",
+      "2_Fine": "$50",
+      "3_Fine": "$100",
+      "4_Fine": "$150",
+      "5": "2-weeks_Juvenile Detention"
+    }
   }
-]
+}
