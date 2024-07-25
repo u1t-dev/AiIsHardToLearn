@@ -33,7 +33,7 @@ const findMostSimilarCase = (similarities) => {
 };
 
 (async () => {
-  const data = await loadData("./data.jsonc");
+  const data = await loadData("./data.json");
 
   const rl = readline.createInterface({
     input: process.stdin,
