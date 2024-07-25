@@ -46,7 +46,7 @@ const findMostSimilarCase = (similarities) => {
       const similarities = computeSimilarity(inputCase, data);
       const mostSimilarCase = findMostSimilarCase(similarities);
       console.log(
-        `---\n\x1b[1;32mSuitable Punishment Found: ${mostSimilarCase.punishment}`,
+        `---\n\x1b[1;32mSuitable Punishment Found: ${mostSimilarCase.punishment}\x1b[22;0m`,
       );
       rl.close();
     });
