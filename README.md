@@ -16,8 +16,8 @@ it uses chalk & natural, so just run `npm i chalk natural` to get the dependant 
 
 Example Input:
 
-```ansi
-\033[33m$\033[0m node .
+```
+$ node .
 
 Enter the crime: Kidnapping
 
@@ -25,5 +25,5 @@ Enter the details of the crime: First offense
 
 ---
 
-\033[32mSuitable Punishment Found: Execution by Gas Chamber, Possible Vindication\033[0m
+Suitable Punishment Found: Execution by Gas Chamber, Possible Vindication
 ```
